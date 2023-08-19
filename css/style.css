@@ -455,6 +455,8 @@ body {
 }
 
 .promo-footer-main-block__icon img {
+  width: 100%;
+  height: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -913,7 +915,6 @@ body {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  font-size: 1.25rem;
   font-weight: 500;
   letter-spacing: 0.2px;
 }
@@ -927,6 +928,7 @@ body {
 
 .item-results__image {
   border-radius: 1.25rem;
+  overflow: hidden;
 }
 
 .results__row-top .item-results__image {
@@ -940,6 +942,9 @@ body {
 }
 
 .item-results__image img {
+  -webkit-transform: scale(1.02);
+      -ms-transform: scale(1.02);
+          transform: scale(1.02);
   border-radius: 1.25rem;
   width: 100%;
   height: 100%;
@@ -1554,6 +1559,10 @@ body {
     height: 37.5rem;
   }
 
+  .item-results__text {
+    font-size: 1.25rem;
+  }
+
   .plan {
     padding-top: 4.375rem;
   }
@@ -1634,13 +1643,6 @@ body {
 
   .results__grid {
     gap: 1.5625rem;
-  }
-}
-
-@media (max-width: 35em) {
-  .plan__items {
-    -ms-grid-columns: (1fr)[1];
-    grid-template-columns: repeat(1, 1fr);
   }
 }
 
@@ -2402,6 +2404,10 @@ body {
     height: 25rem;
   }
 
+  .item-results__text {
+    font-size: 1rem;
+  }
+
   .plan {
     padding-top: 1.875rem;
   }
@@ -2409,6 +2415,11 @@ body {
   .plan__container {
     padding-left: 0.625rem;
     padding-right: 0.625rem;
+  }
+
+  .plan__items {
+    -ms-grid-columns: (1fr)[1];
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .plan__decor {
@@ -3321,6 +3332,18 @@ body {
 @supports not (height: clamp( 25rem , 15.7698993877rem  +  30.7682840528vw , 37.5rem )) {
     .results__decor {
       height: calc(25rem + 12.5 * (100vw - 29.99875rem) / 40.62625);
+    }
+}
+
+@supports (font-size: clamp( 1rem , 0.8153979878rem  +  0.6153656811vw , 1.25rem )) {
+    .item-results__text {
+      font-size: clamp( 1rem , 0.8153979878rem  +  0.6153656811vw , 1.25rem );
+    }
+}
+
+@supports not (font-size: clamp( 1rem , 0.8153979878rem  +  0.6153656811vw , 1.25rem )) {
+    .item-results__text {
+      font-size: calc(1rem + 0.25 * (100vw - 29.99875rem) / 40.62625);
     }
 }
 
