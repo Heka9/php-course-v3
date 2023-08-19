@@ -1837,6 +1837,13 @@ body {
             flex-direction: column-reverse;
   }
 
+  .item-course_col {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
   .item-course_reverse {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
